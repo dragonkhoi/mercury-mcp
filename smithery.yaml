@@ -6,19 +6,11 @@ startCommand:
     # JSON Schema defining the configuration options for the MCP.
     type: object
     required:
-      - username
-      - password
-      - projectId
+      - apiKey
     properties:
-      username:
+      apiKey:
         type: string
-        description: Your Mercury service account username.
-      password:
-        type: string
-        description: Your Mercury service account password.
-      projectId:
-        type: string
-        description: Your Mixpanel project ID.
+        description: Your Mercury API key.
   commandFunction:
     # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
     |-
@@ -27,6 +19,4 @@ startCommand:
       args: ['build/index.js', config.username, config.password, config.projectId]
     })
   exampleConfig:
-    username: exampleUser
-    password: examplePass
-    projectId: exampleProjectId
+    apiKey: exampleApiKey
