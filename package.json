@@ -1,5 +1,5 @@
 {
-  "name": "mcp-mixpanel",
+  "name": "mcp-mercury",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "type": "module",
   "bin": {
-    "mcp-mixpanel": "./build/index.js"
+    "mcp-mercury": "./build/index.js"
   },
   "files": [
     "build"
