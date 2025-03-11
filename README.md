@@ -11,11 +11,20 @@ I am adding more coverage of the Mercury API over time, let me know which tools 
 Make sure to go to your Mercury Settings to get a [Mercury API Key](https://mercury.com/settings/tokens).
 
 ### Installing via Smithery
+[![smithery badge](https://smithery.ai/badge/@dragonkhoi/mercury-mcp)](https://smithery.ai/server/@dragonkhoi/mercury-mcp)
 
 To install mercury-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@dragonkhoi/mercury-mcp):
 
 ```bash
 npx -y @smithery/cli install @dragonkhoi/mercury-mcp --client claude
+```
+
+To install mixpanel-mcp for Cursor, go to Settings -> Cursor Settings -> Features -> MCP Servers -> + Add
+
+Select Type: command and paste the below, using the arguments `<API_KEY>` from Mercury
+
+```
+npx -y @smithery/cli@latest run @dragonkhoi/mercury-mcp --config "{\"mercury_api_key\":\"YOUR_MERCURY_API_KEY\",}"
 ```
 
 ### Clone and run locally
