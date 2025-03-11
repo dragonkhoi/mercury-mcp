@@ -1,5 +1,7 @@
 # Mercury MCP
 
+[![smithery badge](https://smithery.ai/badge/@dragonkhoi/mercury-mcp)](https://smithery.ai/server/@dragonkhoi/mercury-mcp)
+
 Simple MCP server that interfaces with the Mercury API, allowing you to talk to your Mercury banking data from any MCP client like Cursor or Claude Desktop.
 
 I am adding more coverage of the Mercury API over time, let me know which tools you need or just open a PR.
@@ -10,6 +12,7 @@ Make sure to go to your Mercury Settings to get a [Mercury API Key](https://merc
 
 ### Installing via Smithery
 [![smithery badge](https://smithery.ai/badge/@dragonkhoi/mercury-mcp)](https://smithery.ai/server/@dragonkhoi/mercury-mcp)
+
 To install mercury-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@dragonkhoi/mercury-mcp):
 
 ```bash
