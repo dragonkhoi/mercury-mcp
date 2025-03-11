@@ -69,6 +69,49 @@ server.tool(
   }
 )
 
+server.tool(
+  "get_transactions",
+  "Retrieve incoming and outgoing money transactions for a specific bank account.",
+  {
+    account_id: z.string().describe("The ID of the bank account to retrieve transactions for.")
+  },
+  async ({ account_id }) => {
+    try {
+      const url = `https://api.mercury.com/api/v1/account/${account_id}/transactions`;
+      const options = {
+        method: 'GET',
+        headers: {
+          'accept': 'application/json',
+          'authorization': `Bearer ${MERCURY_API_KEY}`
+        }
+      };
+
+      const response = await fetch(url, options);
+      const data = await response.json();
+      
+      return {
+        content: [
+          {
+            type: "text",
+            text: JSON.stringify(data)
+          }
+        ]
+      };
+    } catch (error: unknown) {
+      console.error("Error fetching transactions:", error);
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Error fetching transactions: ${errorMessage}`
+          }
+        ]
+      };
+    }
+  }
+)
+
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
