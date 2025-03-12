@@ -16,7 +16,7 @@ startCommand:
     |-
     (config) => ({
       command: 'node',
-      args: ['build/index.js', config.username, config.password, config.projectId]
+      args: ['build/index.js', config.apiKey]
     })
   exampleConfig:
     apiKey: exampleApiKey
